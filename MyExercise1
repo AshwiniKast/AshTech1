@@ -1,0 +1,99 @@
+## List Comprehensios: 
+
+
+Header1
+
+
+Numbers=list(range(1,11))
+print(Numbers)
+
+print(Numbers[1:6])
+
+Numbers=list(range(1,11))
+squared=[]
+def square(x):
+  return x**2
+for i,n in enumerate(Numbers):
+#for i in range(len(Numbers)):
+    squared.append(square(n))
+print(squared)  
+
+
+squared1=[x**2 for x in Numbers]
+print(squared1)
+
+import numpy as np
+n=np.array([1,2,3,4,5,6,7,8,9,10])
+
+print(n)
+
+#EvenNo=[n if n%2==0 else 0 for i in n]
+EvenNo=[Numbers[i-1] if Numbers[i-1]%2==0 else 0 for i in Numbers]
+print(EvenNo)
+
+## Palindrome String:
+
+
+def Reverse_String(s):
+  new_s=''
+  for i in range(len(s)-1,-1,-1):
+    new_s=new_s+s[i]
+  return new_s
+      
+# Write List comprehension for this
+
+
+s="ABC"
+new_s=[]
+new_s=[s[i] for i in range(len(s)-1,-1,-1)]
+print(new_s)
+
+Reverse_String('Great')
+
+## Reverse Number:
+
+print(12%2)
+print(13//2)
+print(13/2)
+print(3//10)
+
+
+def Reverse_Number(x):
+  new_num=0
+  
+  sign=1 if x>0 else -1
+  x=abs(x)
+  while x>0:
+    remainder=x%10
+    x=x//10
+    new_num=new_num*10+remainder
+  return (new_num*sign)
+ 
+
+
+N=10
+while N>0:
+  print(N)
+  N-=1
+  
+
+123%10
+x=123//10
+print("intPart",str(x))
+
+Reverse_Number(-123) 
+
+Reverse_Number(990157)
+
+
+
+import seaborn
+import pandas as pd
+#data=seaborn.load_dataset("iris")
+data={'1':"Taylor",'2':"Grant"}
+print(data)
+#Mydf=pd.DataFrame([data])
+Mydf=pd.DataFrame(data, index=[0])
+print(Mydf.head)
+
+
